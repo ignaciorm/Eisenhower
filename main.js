@@ -1,26 +1,35 @@
-let cols = rows = 9;
+let cols = rows = 6;
+
 
 function setup() {
-  createCanvas(800,800);
+  createCanvas(500,500);
   background(30);
 
 }
 
 function draw(){
-  let thisy = height/10;
-  for (let i = 0; i < rows; i++) {
-    let thisx = width/10;
+  let rowsdis = width* 2 /(rows + 2);
+  let colsdis = height* 2 /(cols + 2);
+
+  let rectx = width/(rows + 2);
+
     for (let i = 0; i < cols; i++) {
-      cuad(thisx,thisy);
-      thisx += height/10;
+    let recty = height/(cols + 2);
+    for (let a = 0; a < rows; a++) {
+      rectMode(CENTER);
+      rect(rectx,recty,100,100);
+      recty += colsdis;
+      console.log(rectx + '= rectx' + recty + '= recty');
     }
-    thisy += width/10;
+    rectx += rowsdis;
   }
-
 }
 
-function cuad(x,y){
-  rectMode(CENTER);
-  fill(140);
-  rect(x, y, 40, 40);
-}
+// function draw(){
+//   rectMode(CENTER);
+//   rect(width/4,height/4,50,50);
+//   rect(width/4,height*3/4,50,50);
+//   rect(width*3/4,height/4,50,50);
+//   rect(width*3/4,height*3/4,50,50);
+//
+// }
