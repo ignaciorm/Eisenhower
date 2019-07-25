@@ -1,4 +1,4 @@
-let cols = rows = 6;
+let cols = rows = 4;
 
 
 function setup() {
